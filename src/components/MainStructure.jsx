@@ -1,5 +1,6 @@
 import Row from "react-bootstrap/Row";
 import Anchor from "react-bootstrap/Anchor";
+import SingleArtist from "./SingleArtist";
 
 const MainStructure = () => {
   return (
@@ -14,7 +15,15 @@ const MainStructure = () => {
         </div>
       </Row>
       {/* questa row va ad abbracciare il component SingleArtist ogni volta che lo si vuole importare */}
-      <Row></Row>
+      <Row className="mt-5">
+        <SingleArtist query="big thief" genre="Indie" />
+      </Row>
+      <Row>
+        <SingleArtist query="gflip" genre="Queer" />
+      </Row>
+      <Row>
+        <SingleArtist query="girli" genre="Pop" />
+      </Row>
     </>
   );
 };

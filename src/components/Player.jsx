@@ -4,8 +4,12 @@ import Shuffle from "../assets/playerbuttons/shuffle.png";
 import Prev from "../assets/playerbuttons/prev.png";
 import Play from "../assets/playerbuttons/play.png";
 import Repeat from "../assets/playerbuttons/repeat.png";
+import { useSelector } from "react-redux";
 
 const Player = () => {
+  const song = useSelector((state) => state.songs.results);
+  console.log(song);
+
   return (
     <div className="row h-100">
       <div className="col-lg-10 offset-lg-2">
@@ -30,6 +34,9 @@ const Player = () => {
             </div>
             <div className="progress mt-3">
               <div role="progressbar"></div>
+              <p className="text-center mt-3 text-white ">
+                {song.title} -{/* {song.artist.name} */}
+              </p>
             </div>
           </div>
         </div>
